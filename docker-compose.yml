@@ -4,6 +4,6 @@ services:
   backend:
     build: .
     volumes:
-      - ./db.sqlite3:/code/db.sqlite3
+      - ./database:/code/database
     ports:
       - "8000:8000"

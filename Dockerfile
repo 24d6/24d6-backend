@@ -17,7 +17,7 @@ RUN pipenv install
 
 # Copy src
 ADD . /code/
-RUN rm /code/db.sqlite3
-VOLUME /code/db.sqlite3
+RUN rm -rf /code/database
+VOLUME /code/database
 
 CMD ["/code/entry.sh"]
