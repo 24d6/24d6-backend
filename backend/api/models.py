@@ -54,6 +54,7 @@ class Run(models.Model):
         on_delete=models.CASCADE,
         null=True,
     )
+    gamemaster = models.ForeignKey('User', on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return '{}'.format(self.name)
