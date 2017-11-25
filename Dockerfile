@@ -17,5 +17,7 @@ RUN pipenv install
 
 # Copy src
 ADD . /code/
+RUN rm /code/db.sqlite3
+VOLUME /code/db.sqlite3
 
-CMD ["pipenv","run","python","manage.py","runserver"]
+CMD ["/code/entry.sh"]
