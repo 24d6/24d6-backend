@@ -1,4 +1,4 @@
-from backend.api.models import User, Character, Group
+from backend.api.models import Character, Group, Run, User
 from rest_framework import serializers
 
 
@@ -18,3 +18,9 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name', 'character_set')
+
+
+class RunSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Run
+        fields = '__all__'
