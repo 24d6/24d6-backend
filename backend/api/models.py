@@ -7,4 +7,4 @@ class User(DjangoUser):
         ('de', 'de_DE'),
         ('en', 'en_GB'),
     )
-    lang = models.CharField(max_length=5, choices=LANGUAGES)
+    lang = models.CharField(max_length=5, choices=LANGUAGES, default='de')
