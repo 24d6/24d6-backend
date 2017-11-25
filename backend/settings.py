@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'backend.api',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
+
+# Using custom user model
+AUTH_USER_MODEL = 'api.User'
