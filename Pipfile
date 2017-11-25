@@ -11,6 +11,7 @@ django = ">=2.0rc1"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+django-cors-headers = "*"
 
 
 [dev-packages]
