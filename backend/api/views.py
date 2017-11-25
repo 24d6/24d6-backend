@@ -1,6 +1,6 @@
-from backend.api.models import User
+from backend.api.models import User, Character
 from rest_framework import viewsets
-from backend.api.serializers import UserSerializer
+from backend.api.serializers import UserSerializer, CharacterSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -11,3 +11,9 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
+class CharacterViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows characters to be viewed or edited.
+    """
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
