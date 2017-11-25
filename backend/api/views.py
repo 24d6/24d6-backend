@@ -1,6 +1,6 @@
-from backend.api.models import User, Character
+from backend.api.models import Character, Group, User
 from rest_framework import viewsets
-from backend.api.serializers import UserSerializer, CharacterSerializer
+from backend.api.serializers import CharacterSerializer, GroupSerializer, UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +17,11 @@ class CharacterViewSet(viewsets.ModelViewSet):
     """
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
