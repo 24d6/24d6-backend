@@ -8,3 +8,21 @@ class User(DjangoUser):
         ('en', 'en_GB'),
     )
     lang = models.CharField(max_length=5, choices=LANGUAGES, default='de')
+
+
+class Character(models.Model):
+    RACES = (
+        ('human', 'Human'),
+        ('ork', 'Ork'),
+        ('troll', 'Troll'),
+        ('elf', 'Elf'),
+        ('dwarf', 'Dwarf'),
+    )
+    user = models.ForeignKey(
+        'User',
+        on_delete=models.CASCADE,
+    )
+    name = models.CharField(max_length=50)
+    streetname = models.CharField(max_length=50)
+    metatype = models.CharField(max_length=20, choices=RACES)
+    ethnos = models.CharField(max_length=50)
