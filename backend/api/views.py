@@ -1,6 +1,7 @@
-from backend.api.models import Character, Group, User
+from backend.api.models import Character, Group, Run, User
 from rest_framework import viewsets
-from backend.api.serializers import CharacterSerializer, GroupSerializer, UserSerializer
+from backend.api.serializers import (
+    CharacterSerializer, GroupSerializer, RunSerializer, UserSerializer)
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -25,3 +26,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class RunViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows runs to be viewed or edited.
+    """
+    queryset = Run.objects.all()
+    serializer_class = RunSerializer

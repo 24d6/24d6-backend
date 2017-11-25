@@ -45,3 +45,15 @@ class Group(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+
+class Run(models.Model):
+    name = models.CharField(max_length=50)
+    group = models.ForeignKey(
+        'Group',
+        on_delete=models.CASCADE,
+        null=True,
+    )
+
+    def __str__(self):
+        return '{}'.format(self.name)
