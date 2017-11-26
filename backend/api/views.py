@@ -16,8 +16,14 @@ class CharacterViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows characters to be viewed or edited.
     """
-    queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+
+    def get_queryset(self):
+        queryset = Character.objects.all()
+        user_id = self.request.query_params.get('user_id', None)
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+        return queryset
 
 
 class GroupViewSet(viewsets.ModelViewSet):
